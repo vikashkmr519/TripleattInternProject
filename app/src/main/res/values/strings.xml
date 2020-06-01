@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Vikash Kumar</string>
+    <string name="Forgot_password"><u>Forgot Password? </u></string>
+    <string name="Enter_your_name">Enter Your Name <font fgcolor='#FF0000'>*</font></string>
+    <string name="Enter_Mobile_Number">Enter Mobile Number <font fgcolor='#FF0000'>*</font></string>
+    <string name="Enter_Password">Enter Password <font fgcolor='#FF0000'>*</font></string>
+    <string name="Re_Enter_password">Re enter Password <font fgcolor='#FF0000'>*</font></string>
+    <string name="which_type_of_vehicle"><font fgcolor="#00BFFF">!</font> Which type of Vehicle you have? <font fgcolor='#FF0000'>*</font></string>
+    <string name="vehicle_number"><font fgcolor="#00BFFF">!!!</font> Enter your vehicle number <font fgcolor='#FF0000'>*</font></string>
+    <string name="driving_licence_number"><font fgcolor="#00BFFF">!!</font>Enter your Driving License Number <font fgcolor='#FF0000'>*</font></string>
+    <string name="choose_location"><u><font fgcolor='#00BFFF'>Choose Location</font></u></string>
+
+</resources>

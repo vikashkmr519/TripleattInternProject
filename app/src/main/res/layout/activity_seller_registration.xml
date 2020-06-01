@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SellerRegistrationActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="16dp"
+        android:elevation="8dp"
+
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/text1Rl"
+                android:background="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/CRTv"
+                    android:text="Seller Registration :"
+                    android:layout_marginLeft="10dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+            </RelativeLayout>
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:id="@+id/timeview"
+                android:layout_below="@id/text1Rl"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/colorGrey"
+                    app:cardCornerRadius="40dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp">
+
+                </androidx.cardview.widget.CardView>
+                <View
+
+
+                    android:background="@color/colorGrey"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp">
+
+                </View>
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/colorGrey"
+                    app:cardCornerRadius="40dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp">
+
+                </androidx.cardview.widget.CardView>
+                <View
+
+
+                    android:background="@color/colorGrey"
+                    android:layout_width="100dp"
+                    android:layout_height="10dp">
+
+                </View>
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/colorGrey"
+                    app:cardCornerRadius="40dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp">
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_below="@id/timeview"
+                android:id="@+id/timeviewtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Owner Details"
+                    android:textSize="12dp"
+                    android:id="@+id/profileDetails"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+                <TextView
+                    android:text="Shop Details"
+                    android:textSize="12dp"
+                    android:id="@+id/VehicleDetails"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_toRightOf="@id/profileDetails"
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+                <TextView
+                    android:text="Preview And \n      Submit"
+                    android:textSize="12dp"
+                    android:id="@+id/PreviewAndSubmit"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_toRightOf="@id/VehicleDetails"
+                    android:layout_marginLeft="38dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+            </RelativeLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:id="@+id/tilAadhar"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/timeviewtext"
+                android:layout_width="match_parent"
+                app:boxStrokeWidth="1dp"
+                app:boxBackgroundColor="#F0F0F0"
+                app:boxStrokeColor="@color/colorAccent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tietAadharId"
+                    android:hint="Enter Your Aadhar Id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:id="@+id/tilName"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/tilAadhar"
+                android:layout_width="match_parent"
+                app:boxStrokeWidth="1dp"
+                app:boxBackgroundColor="#F0F0F0"
+                app:boxStrokeColor="@color/colorAccent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tietName"
+                    android:hint="@string/Enter_your_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:id="@+id/tilAddress"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/tilName"
+                android:layout_width="200dp"
+                app:boxStrokeWidth="1dp"
+                app:boxBackgroundColor="#F0F0F0"
+                app:boxStrokeColor="@color/colorAccent"
+
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tietAddress"
+                    android:hint="Enter Your Address"
+                    android:textSize="15dp"
+                    android:drawableEnd="@drawable/ic_my_location_blue_24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:id="@+id/tilPincode"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/tilName"
+                android:layout_width="100dp"
+                app:boxStrokeWidth="1dp"
+                android:layout_toRightOf="@id/tilAddress"
+                app:boxBackgroundColor="#F0F0F0"
+                android:layout_alignParentEnd="true"
+
+                app:boxStrokeColor="@color/colorAccent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tietpincode"
+                    android:hint="Pincode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:id="@+id/tilMobile"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/tilAddress"
+                android:layout_width="match_parent"
+                app:boxStrokeWidth="1dp"
+                app:boxBackgroundColor="#F0F0F0"
+                app:boxStrokeColor="@color/colorAccent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tietMobile"
+                    android:hint="@string/Enter_Mobile_Number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:id="@+id/tilEmail"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/tilMobile"
+                android:layout_width="match_parent"
+                app:boxStrokeWidth="1dp"
+                app:boxBackgroundColor="#F0F0F0"
+                app:boxStrokeColor="@color/colorAccent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tietEmail"
+                    android:hint="Enter Your Email ID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:id="@+id/tilPassword"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/tilEmail"
+                android:layout_width="match_parent"
+                app:boxStrokeWidth="1dp"
+                app:boxBackgroundColor="#F0F0F0"
+                app:boxStrokeColor="@color/colorAccent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tietLogin"
+                    android:hint="@string/Enter_Password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:id="@+id/tilReEnterPassword"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/tilPassword"
+                android:layout_width="match_parent"
+                app:boxStrokeWidth="1dp"
+                app:boxBackgroundColor="#F0F0F0"
+                app:boxStrokeColor="@color/colorAccent"
+                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tietReEnterPassword"
+                    android:hint="@string/Re_Enter_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/colorAccent"
+                android:text="next"
+                android:id="@+id/btnNext"
+                android:layout_below="@id/tilReEnterPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </Button>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

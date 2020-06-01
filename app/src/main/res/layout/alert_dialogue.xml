@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_margin="16dp"
+        android:textSize="35dp"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:text="Thank You for Connect with us. Please Download and install your admin Panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <LinearLayout
+        android:layout_below="@id/text"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="cancel"
+            android:id="@+id/btncancle"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </Button>
+        <Button
+            android:id="@+id/btnDownload"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="download"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </Button>
+
+    </LinearLayout>
+</RelativeLayout>
