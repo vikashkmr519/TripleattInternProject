@@ -157,6 +157,7 @@
                 android:layout_below="@id/imgProfile"
                 android:layout_toRightOf="@id/nameText"
 
+                android:id="@+id/name"
                 android:text="ABC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -183,7 +184,7 @@
                 android:textColor="@android:color/black"
                 android:layout_below="@id/nameText"
                 android:layout_toRightOf="@id/nameText"
-
+                android:id="@+id/address"
                 android:text="ABSGDD@6332"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -210,7 +211,7 @@
                 android:textColor="@android:color/black"
                 android:layout_below="@id/AddressText"
                 android:layout_toRightOf="@id/Mobiletext"
-
+                android:id="@+id/mobile"
                 android:text="46474568493"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -237,7 +238,7 @@
                 android:textColor="@android:color/black"
                 android:layout_below="@id/Mobiletext"
                 android:layout_toRightOf="@id/nameText"
-
+                android:id="@+id/email"
                 android:text="vikashkmr519@gmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -265,7 +266,7 @@
                 android:textColor="@android:color/black"
                 android:layout_below="@id/EmailId"
                 android:layout_toRightOf="@id/nameText"
-
+                android:id="@+id/aadhar"
                 android:text="22345345"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">

@@ -1,6 +1,8 @@
 package com.example.vikashkumar.Database;
 
 
+import android.widget.LinearLayout;
+
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -13,10 +15,13 @@ import java.util.List;
 public interface Userdao {
 
     @Query("SELECT * FROM User")
-    List<User>  getUser();
+    List<User>  getUserList();
 
     @Query("SElect password from User where emailId = :username  or aadharId =:username or mobileNumber =:username")
     String getPassword(String username);
+
+    @Query("Select * from User where token = :token ")
+    List<User> getUser(String token);
 
     @Insert
     void insert(User user);

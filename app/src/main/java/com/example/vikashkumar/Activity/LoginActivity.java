@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
+
         preferences = new Preferences(getBaseContext());
         btnlogin = findViewById(R.id.btnLogin);
         signUp = findViewById(R.id.signUp);
@@ -39,6 +40,10 @@ public class LoginActivity extends AppCompatActivity {
         enterid = findViewById(R.id.tietLogin);
         enterPassword = findViewById(R.id.tietPassword);
         rememberMe = findViewById(R.id.RememberMeCheckbox);
+
+
+
+
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,37 +77,40 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-         class loginUser extends AsyncTask<Void,Void,Void>{
+         class loginUser extends AsyncTask<Void,Void,String>{
 
-             String getPassword="";
+
              @Override
-             protected Void doInBackground(Void... voids) {
+             protected String doInBackground(Void... voids) {
                  String getPassword =DatabaseClient
                          .getInstance(getApplicationContext())
                          .getAppDatabase()
                          .UserDao()
                          .getPassword(username);
-                 return null;
+                 return getPassword;
              }
 
              @Override
-             protected void onPostExecute(Void aVoid) {
-                 super.onPostExecute(aVoid);
-                 if(!getPassword.equals(password)){
+             protected void onPostExecute(String s) {
+                 super.onPostExecute(s);
+                 if(!s.equals(password)){
                      Toast.makeText(getBaseContext(),"You are Not Registered. Sign Up!!",Toast.LENGTH_SHORT).show();
                      return ;
                  }else{
                      Toast.makeText(getBaseContext(),"Login Successfull",Toast.LENGTH_SHORT).show();
                      Random rand = new Random();
-                     int token = 1000000000+rand.nextInt(900000000);
                      Preferences preferences = new Preferences(getBaseContext());
-                     preferences.setToken(String.valueOf(token));
-                     startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
+
+
+
+
+                     preferences.setUsername(enterid.getText().toString().trim());
+                     Intent i = new Intent(LoginActivity.this,SignUpActivity.class);
+                     i.putExtra("login",true);
+                     startActivity(i);
 
                  }
              }
-
-
          }
         loginUser lu = new loginUser();
         lu.execute();

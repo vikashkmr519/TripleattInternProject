@@ -10,4 +10,6 @@
     <string name="driving_licence_number"><font fgcolor="#00BFFF">!!</font>Enter your Driving License Number <font fgcolor='#FF0000'>*</font></string>
     <string name="choose_location"><u><font fgcolor='#00BFFF'>Choose Location</font></u></string>
 
+
+
 </resources>

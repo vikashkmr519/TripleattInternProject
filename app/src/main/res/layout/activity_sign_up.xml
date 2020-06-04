@@ -69,7 +69,7 @@
                     android:text="I have Aadhar Card"
                     android:id="@+id/haveAadharchxBx"
                     android:textStyle="bold"
-                    android:checked="true"
+
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content">
@@ -137,7 +137,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_below="@id/tilName"
-                android:layout_width="200dp"
+                android:layout_width="180dp"
                 app:boxStrokeWidth="1dp"
                 app:boxBackgroundColor="#F0F0F0"
                 app:boxStrokeColor="@color/colorAccent"
@@ -148,13 +148,24 @@
                     android:id="@+id/tietAddress"
                     android:hint="Enter Your Address"
                     android:textSize="15dp"
-                    android:drawableEnd="@drawable/ic_my_location_blue_24"
+
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                 </com.google.android.material.textfield.TextInputEditText>
 
+
             </com.google.android.material.textfield.TextInputLayout>
+            <ImageView
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/tilName"
+                android:layout_toRightOf="@id/tilAddress"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/location"
+                android:src="@drawable/ic_my_location_blue_24"
+                ></ImageView>
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:id="@+id/tilPincode"
@@ -164,7 +175,7 @@
                 android:layout_below="@id/tilName"
                 android:layout_width="100dp"
                 app:boxStrokeWidth="1dp"
-                android:layout_toRightOf="@id/tilAddress"
+                android:layout_toRightOf="@id/location"
                 app:boxBackgroundColor="#F0F0F0"
                 android:layout_alignParentEnd="true"
 
@@ -272,10 +283,25 @@
                 android:text="Register"
                 android:id="@+id/btnRegister"
                 android:layout_below="@id/tilReEnterPassword"
+                android:visibility="visible"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
             </Button>
+
+            <TextView
+                android:layout_below="@id/tilReEnterPassword"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:id="@+id/successText"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="YOU ARE REGISTERED. \nCLICK TOP BUTTONS FOR FURTHER PROCESS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
 
 
         </RelativeLayout>

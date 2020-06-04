@@ -5,31 +5,76 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.vikashkumar.Database.DatabaseClient;
 import com.example.vikashkumar.Database.User;
 import com.example.vikashkumar.R;
+import com.example.vikashkumar.Utils.Preferences;
+
+import java.util.List;
+import java.util.Random;
 
 public class SignUpActivity extends AppCompatActivity {
-    TextView tvshopOnline, sellerRegistration;
+    TextView tvshopOnline, sellerRegistration, successText,address;
     EditText aadharId,name,mobile,email,password,rePassword;
+    RadioButton haveAadhar,dontHaveAadhar;
+    ImageView location;
+    Button btnRegister;
+    Bundle extras;
+
+    Preferences preferences;
+    private static final String TAG = "SignUpActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+
+        location = findViewById(R.id.location);
         tvshopOnline = findViewById(R.id.getYourshopOnline);
         sellerRegistration = findViewById(R.id.SellerRegistration);
         aadharId = findViewById(R.id.tietAadharId);
+        btnRegister = findViewById(R.id.btnRegister);
         name = findViewById(R.id.tietName);
         mobile = findViewById(R.id.tietMobile);
         email = findViewById(R.id.tietEmail);
         password = findViewById(R.id.tietPassword);
         rePassword = findViewById(R.id.tietReEnterPassword);
+        preferences = new Preferences(SignUpActivity.this);
+        address = findViewById(R.id.tietAddress);
+        successText = findViewById(R.id.successText);
+
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SignUpActivity.this,GoogleMapActivtiy.class);
+                startActivity(i);
+            }
+        });
+
+        if(preferences.getAddress() != null){
+            address.setText(preferences.getAddress());
+        }
+        haveAadhar = findViewById(R.id.haveAadharchxBx);
+        dontHaveAadhar = findViewById(R.id.DontHaveAadharchxBx);
+        if(dontHaveAadhar.isChecked()){
+            aadharId.setText("");
+        }
+
+        //checking intent
+        extras  = getIntent().getExtras();
+
+           // getUser();
+
 
 
 
@@ -43,12 +88,51 @@ public class SignUpActivity extends AppCompatActivity {
         sellerRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent i = new Intent(SignUpActivity.this, SellerRegistrationActivity.class);
-//                startActivity(i);
+                Intent i = new Intent(SignUpActivity.this, SellerRegistrationActivity.class);
+                startActivity(i);
+
+            }
+        });
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 saveUser();
             }
         });
     }
+
+    private void getUser() {
+
+
+        class getUSer extends AsyncTask<Void, Void, List<User>>{
+
+
+            @Override
+            protected List<User> doInBackground(Void... voids) {
+                List<User> user = DatabaseClient
+                        .getInstance(getApplicationContext())
+                        .getAppDatabase()
+                        .UserDao()
+                        .getUser(preferences.getToken());
+                return user;
+            }
+
+            @Override
+            protected void onPostExecute(List<User> users) {
+                super.onPostExecute(users);
+                aadharId.setText(users.get(0).getAadharId());
+                mobile.setText(users.get(0).getMobileNumber());
+                name.setText(users.get(0).getName());
+                email.setText(users.get(0).getEmailId());
+                btnRegister.setVisibility(View.GONE);
+                successText.setVisibility(View.VISIBLE);
+            }
+        }
+        getUSer gu = new getUSer();
+        gu.execute();
+
+    }
+
 
     private void saveUser() {
         final String mAadhar = aadharId.getText().toString().trim();
@@ -100,6 +184,12 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             protected Void doInBackground(Void... voids) {
                 User user = new User();
+                Random rand = new Random();
+                int token = 1000000000+rand.nextInt(900000000);
+                preferences.setToken(String.valueOf(token));
+                user.setToken(String.valueOf(token));
+                user.setAddress(preferences.getAddress());
+
                 user.setAadharId(mAadhar);
                 user.setEmailId(mEmail);
                 user.setMobileNumber(mMobile);

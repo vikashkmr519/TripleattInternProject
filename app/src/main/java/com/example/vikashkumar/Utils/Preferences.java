@@ -12,7 +12,7 @@ public class Preferences {
         editor = sharedPreferences.edit();
     }
 
-    public void setUserID(String email) {
+    public void setEmailID(String email) {
         editor.putString(Constant.EMAILID, email);
         editor.apply();
     }
@@ -24,8 +24,25 @@ public class Preferences {
         editor.putString(Constant.TOKEN, token);
         editor.apply();
     }
+    public void setUsername(String username) {
+        editor.putString(Constant.USERNAME, username);
+        editor.apply();
+    }
 
-    public String getUserID(){
+    public void setAddress(String address) {
+        editor.putString(Constant.ADDRESS, address);
+        editor.apply();
+    }
+
+    public String getUsername(){
+        return sharedPreferences.getString(Constant.USERNAME, "");
+    }
+
+    public String getAddress(){
+        return sharedPreferences.getString(Constant.ADDRESS, "");
+    }
+
+    public String getEmailID(){
         return sharedPreferences.getString(Constant.EMAILID, "");
     }
     public String getToken(){
